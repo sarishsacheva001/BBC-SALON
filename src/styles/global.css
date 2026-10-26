@@ -1,0 +1,366 @@
+/* ==========================================================================
+   BBC SALON — Global Design Tokens & Typography
+   Luxury Editorial Beauty Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --color-warm-ivory: #F6F0E7;
+  --color-ivory-light: #FBF8F3;
+  --color-champagne-gold: #B99A70;
+  --color-gold-hover: #A3845C;
+  --color-gold-subtle: rgba(185, 154, 112, 0.15);
+  --color-gold-border: rgba(185, 154, 112, 0.28);
+  --color-gold-glow: rgba(185, 154, 112, 0.4);
+  
+  --color-espresso: #382820;
+  --color-espresso-deep: #251A15;
+  --color-espresso-card: #2E211A;
+  --color-dark-surface: #1D1410;
+  
+  --color-soft-white: #FFFFFF;
+  --color-muted-taupe: #A89A8A;
+  --color-taupe-light: #C2B6A8;
+  --color-taupe-subtle: rgba(168, 154, 138, 0.15);
+  
+  --color-error: #B94A4A;
+  --color-error-bg: #FDF2F2;
+  --color-success: #3E7E55;
+  --color-success-bg: #EDF7F0;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-punjabi: 'Noto Sans Gurmukhi', sans-serif;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  /* Layout */
+  --max-width: 1280px;
+  --max-width-wide: 1440px;
+  --max-width-narrow: 860px;
+  --header-height: 84px;
+
+  /* Radii - Subtle & Sophisticated (No excessive bubbly pill shapes) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-editorial: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Shadows - Soft and Diffusion Based */
+  --shadow-subtle: 0 4px 20px rgba(56, 40, 32, 0.04);
+  --shadow-elevated: 0 12px 36px rgba(56, 40, 32, 0.08);
+  --shadow-luxury: 0 24px 60px rgba(37, 26, 21, 0.12);
+  --shadow-inner: inset 0 2px 4px rgba(56, 40, 32, 0.03);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-warm-ivory);
+  color: var(--color-espresso);
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: var(--color-champagne-gold);
+  color: var(--color-soft-white);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-warm-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne-gold);
+}
+
+/* Typography Utility Classes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--color-espresso);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: rgba(56, 40, 32, 0.85);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--max-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Section Wrapper */
+.section {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+}
+
+.section-dark {
+  background-color: var(--color-espresso-deep);
+  color: var(--color-warm-ivory);
+}
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: var(--color-warm-ivory);
+}
+.section-dark p {
+  color: rgba(246, 240, 231, 0.8);
+}
+
+/* Editorial Eyebrow Label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-champagne-gold);
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-champagne-gold);
+}
+.eyebrow.no-after::after {
+  display: none;
+}
+
+/* Punjabi Subtitle Text */
+.punjabi-sub {
+  font-family: var(--font-punjabi);
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  color: var(--color-champagne-gold);
+}
+
+/* Luxury Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-espresso);
+  color: var(--color-warm-ivory);
+  border: 1px solid var(--color-espresso);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-champagne-gold);
+  border-color: var(--color-champagne-gold);
+  color: var(--color-soft-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(185, 154, 112, 0.35);
+}
+
+.btn-gold {
+  background-color: var(--color-champagne-gold);
+  color: var(--color-soft-white);
+  border: 1px solid var(--color-champagne-gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(185, 154, 112, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-espresso);
+  border: 1px solid var(--color-champagne-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-champagne-gold);
+  color: var(--color-soft-white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--color-warm-ivory);
+  border: 1px solid rgba(246, 240, 231, 0.4);
+}
+
+.btn-outline-light:hover {
+  border-color: var(--color-champagne-gold);
+  color: var(--color-champagne-gold);
+  background: rgba(185, 154, 112, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Verification Note Tag */
+.verification-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--color-muted-taupe);
+  background: rgba(168, 154, 138, 0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
+  border: 1px dashed rgba(185, 154, 112, 0.3);
+  font-style: italic;
+}
+
+/* Hairline Divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold-border) 20%,
+    var(--color-gold-border) 80%,
+    transparent 100%
+  );
+  width: 100%;
+  margin: var(--space-xl) 0;
+}
+
+/* Accessible Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-champagne-gold);
+  outline-offset: 3px;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
